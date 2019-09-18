@@ -1,62 +1,108 @@
-.navbar {
-  justify-content: space-between;
-  background: white !important;
-  position: relative;
-  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+.landing-container {
+  width: 100vw;
+  overflow-x: hidden;
 
-  .navbar-brand {
-    padding-top: 0;
-    padding-bottom: 0;
+  .navbar {
+    justify-content: space-between;
+    background: white !important;
+    position: relative;
+    border-bottom: 1px solid #dfe0e1;
+    z-index: 30;
+
+    .navbar-brand {
+      padding-top: 0;
+      padding-bottom: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-logo-text {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+
+    .navbar-logo {
+      height: 60px;
+      width: auto;
+      margin-right: 10px;
+    }
+
+    .navbar-buttons {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      .navbar-button {
+        height: 76px;
+        width: 76px;
+        border: none;
+
+        &.red {
+          background: #ea3836;
+          &:hover {
+            background: #d7322d;
+          }
+        }
+
+        &.yellow {
+          background: #fbd349;
+          &:hover {
+            background: #f6ac41;
+          }
+        }
+
+        &.teal {
+          background: #91cece;
+          &:hover {
+            background: #83b2b7;
+          }
+        }
+
+        & img {
+          height: 25px;
+          width: auto;
+        }
+      }
+    }
+  }
+
+  .jumbotron {
     display: flex;
     align-items: center;
-  }
-
-  .navbar-logo-text {
-    display: inline-block;
+    border-radius: 0;
     margin-bottom: 0;
+
+    .jumbotron-content {
+      padding-right: 30px;
+    }
+
+    .jumbotron-image-container {
+      display: none;
+      // Medium devices (tablets, 768px and up)
+      @media (min-width: 768px) {
+        display: inline-block;
+      }
+
+      // Large devices (desktops, 992px and up)
+      @media (min-width: 992px) {
+        display: inline-block;
+      }
+
+      // Extra large devices (large desktops, 1200px and up)
+      @media (min-width: 1200px) {
+        display: inline-block;
+      }
+      .jumbotron-image {
+        width: 100%;
+        height: auto;
+        display: inline-block;
+      }
+    }
   }
 
-  .navbar-logo {
-    height: 60px;
-    width: auto;
-    margin-right: 10px;
-  }
-
-  .navbar-buttons {
+  .authentication-modal {
     position: absolute;
     top: 0;
     right: 0;
-
-    .navbar-button {
-      height: 76px;
-      width: 76px;
-      border: none;
-
-      &.red {
-        background: #ea3836;
-        &:hover {
-          background: #d7322d;
-        }
-      }
-
-      &.yellow {
-        background: #fbd349;
-        &:hover {
-          background: #f6ac41;
-        }
-      }
-
-      &.teal {
-        background: #91cece;
-        &:hover {
-          background: #83b2b7;
-        }
-      }
-
-      & img {
-        height: 25px;
-        width: auto;
-      }
-    }
   }
 }

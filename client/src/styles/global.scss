@@ -16,6 +16,7 @@
 body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 1.6rem;
+  overflow-x: hidden;
 }
 
 h1,
@@ -51,4 +52,16 @@ input {
 
 button {
   outline: none;
+}
+
+.App {
+  overflow-y: hidden;
+}
+
+.red {
+  background: #ea3836;
+}
+
+.teal {
+  background: #91cece;
 }
