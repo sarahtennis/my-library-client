@@ -9,12 +9,14 @@
 <script>
 import SignIn from "./SignIn.vue";
 import Register from "./Register.vue";
+import ForgotPassword from "./ForgotPassword.vue";
 
 export default {
   name: "Authentication",
   components: {
     SignIn,
-    Register
+    Register,
+    ForgotPassword
   },
   methods: {
     onClick: function(component) {
@@ -28,6 +30,8 @@ export default {
         case "sign-in":
           return this.component;
         case "register":
+          return this.component;
+        case "forgot-password":
           return this.component;
         default:
           this.component = "sign-in";
@@ -74,7 +78,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .auth-container {
-  width: 300px;
+  width: 400px;
   max-width: 90%;
   overflow-y: hidden;
   transition: all 0.5s ease;
@@ -95,7 +99,11 @@ export default {
 .footer-nav {
   display: flex;
   justify-content: space-between;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
+}
+
+.footer-nav div:hover {
+  cursor: pointer;
 }
 
 .auth-logo {
@@ -109,5 +117,22 @@ export default {
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 40px;
+}
+
+.auth-button {
+  background: #56a800;
+  color: white;
+  outline: none;
+  border: 2px solid transparent;
+}
+
+.auth-button:focus {
+  box-shadow: 0 0 0 1px #0039a6;
+}
+
+.auth-button:hover {
+  border: 2px solid #56a800;
+  background: white;
+  color: #56a800;
 }
 </style>

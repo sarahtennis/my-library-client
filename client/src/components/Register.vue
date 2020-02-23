@@ -15,7 +15,7 @@
         <label for="confirm-password">Confirm Password</label>
         <input type="password" id="confirm-password" name="confirm-password" required="required" />
       </div>
-      <button>Button</button>
+      <button class="auth-button">Button</button>
       <div class="footer-nav">
         <div @click="onClick('sign-in')">Sign-In</div>
         <div @click="onClick('forgot-password')">Forgot Password</div>

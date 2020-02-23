@@ -25,8 +25,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../assets/svg/Radiant-Gradient.svg") no-repeat center center
-    fixed;
+  background: url("../assets/svg/background.svg") no-repeat center center fixed;
   background-size: cover;
 }
 </style>
