@@ -1,7 +1,7 @@
 <template>
   <div id="sign-in">
     <Logo class="auth-logo"></Logo>
-    <h2 class="auth-h2">Sign-In</h2>
+    <h2 class="auth-h2">Sign In</h2>
     <form>
       <div class="form-group">
         <label for="username">Username</label>
@@ -11,7 +11,7 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required="required" />
       </div>
-      <button class="auth-button">Button</button>
+      <button class="auth-button">Sign In</button>
       <div class="footer-nav">
         <div @click="onClick('register')">Register</div>
         <div @click="onClick('forgot-password')">Forgot Password</div>
@@ -21,17 +21,12 @@
 </template>
 
 <script>
-import Logo from "../assets/svg/logo.vue";
+import Logo from "../assets/vue/logo.vue";
 
 export default {
   name: "SignIn",
   components: {
     Logo
-  },
-  data: function() {
-    return {
-      logoPath: "/src/assets/svg/logo.svg"
-    };
   },
   props: {
     onClick: Function

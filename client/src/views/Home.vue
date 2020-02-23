@@ -25,7 +25,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../assets/svg/background.svg") no-repeat center center fixed;
+  background: #336699;
   background-size: cover;
 }
 </style>

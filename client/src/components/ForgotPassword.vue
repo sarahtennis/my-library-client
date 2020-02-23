@@ -7,7 +7,7 @@
         <label for="username">Username</label>
         <input type="text" id="username" name="username" required="required" />
       </div>
-      <button class="auth-button">Button</button>
+      <button class="auth-button">Reset Password</button>
       <div class="footer-nav">
         <div @click="onClick('sign-in')">Sign-In</div>
         <div @click="onClick('register')">Register</div>

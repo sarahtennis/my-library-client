@@ -120,19 +120,19 @@ export default {
 }
 
 .auth-button {
-  background: #56a800;
+  background: #0b1d51;
   color: white;
   outline: none;
   border: 2px solid transparent;
 }
 
 .auth-button:focus {
-  box-shadow: 0 0 0 1px #0039a6;
+  box-shadow: 0 0 0 1px #f2ccc3;
 }
 
 .auth-button:hover {
-  border: 2px solid #56a800;
+  border: 2px solid #0b1d51;
   background: white;
-  color: #56a800;
+  color: #0b1d51;
 }
 </style>
