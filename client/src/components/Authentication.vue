@@ -1,8 +1,8 @@
 <template>
-  <div class="hello">
-    <component :is="validateComponent()"></component>
-    <div v-on:click="component = 'sign-in'">Sign in</div>
-    <div v-on:click="component = 'register'">Register</div>
+  <div class="auth-container" :style="style">
+    <div ref="component" class="component-container" :style="componentStyle">
+      <component :is="validateComponent()" :onClick="onClick"></component>
+    </div>
   </div>
 </template>
 
@@ -17,6 +17,12 @@ export default {
     Register
   },
   methods: {
+    onClick: function(component) {
+      this.opacity = 0;
+      setTimeout(() => {
+        this.component = component;
+      }, 500);
+    },
     validateComponent: function() {
       switch (this.component) {
         case "sign-in":
@@ -29,20 +35,79 @@ export default {
       }
     }
   },
+  mounted: function() {
+    this.height = this.$refs.component.clientHeight;
+  },
   data: function() {
     return {
-      component: "sign-in"
+      component: "sign-in",
+      height: 0,
+      opacity: 1
     };
+  },
+  watch: {
+    component: function() {
+      console.log("changed");
+      this.$nextTick(function() {
+        this.height = this.$refs.component.clientHeight;
+        setTimeout(() => {
+          this.opacity = 1;
+        }, 500);
+      });
+    }
+  },
+  computed: {
+    style: function() {
+      return {
+        height: this.height + "px"
+      };
+    },
+    componentStyle: function() {
+      return {
+        opacity: this.opacity
+      };
+    }
   }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-.hello {
+<style lang="scss">
+.auth-container {
+  width: 300px;
+  max-width: 90%;
+  overflow-y: hidden;
   transition: all 0.5s ease;
-  div {
-    background: red;
-  }
+  background: white;
+  border-radius: 4px;
+}
+
+.component-container {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  padding: 30px;
+}
+
+.fade {
+  opacity: 0;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}
+
+.auth-logo {
+  width: 100px;
+  height: auto;
+}
+
+.auth-h2 {
+  width: 100%;
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 40px;
 }
 </style>
